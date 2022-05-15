@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>喜欢我lc吗？</title>
+		<meta charset='UTF-8' />
+		<style>
+			#body{
+				background: url(background.gif) no-repeat;
+				background-size: 100% 100%;	
+				width: 1347px;
+				height:646px;
+			}
+			#word{
+				color: #ff2400;
+				font-size: 60px;
+				text-align: center;
+				padding-top:15px;
+				font-family:Aa柠檬小姐;
+			}
+			input{
+				position: absolute;
+				height: 50px;
+				width: 200px;
+				background-color:rgba(255,255,255,0.5);
+				outline:none;
+				border-radius: 5px;
+				font-size: 30px;
+				font-family: Aa元气满满;
+			}
+			#like{
+				top: 323px;
+				left:250px;
+			}
+			#not{
+				top: 323px;
+				right:250px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="body">
+			<div id="word">喜欢我lc吗？</div>
+		</div>
+		<input type="button" value="喜欢" id="like"/>
+		<input type="button" value="不喜欢" id="not" />
+		<script>
+			var n = document.getElementById('not');
+			var l = document.getElementById('like');
+			n.onmouseover = function(){
+				//n.style.display = 'none';
+				var top = Math.random()*500+100+'px';
+				var right = Math.random()*500+100+'px';
+				n.style.top = top;
+				n.style.right = right;
+			}
+			l.onmouseover = function(){
+				n.style.top = "323px";
+				n.style.right = "250px";
+			}
+			n.onclick = function(){
+				var top = Math.random()*500+100+'px';
+				var right = Math.random()*100+700+'px';
+				n.style.top = top;
+				n.style.right = right;
+			}
+			l.onclick = function(){
+				alert('我也喜欢你呢，啾咪');
+				window.close();
+			}
+			console.log('NineQueen出品，必属精品')
+		</script>
+	</body>
+</html>
