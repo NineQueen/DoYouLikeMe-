@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>喜欢我刘c吗？</title>
+		<meta charset='UTF-8' />
+		<style>
+			html,body{
+				height: 100%;
+			}
+			@font-face {
+				font-family: yuanqi;
+				src: url('HYHeiLiZhiTiJ.ttf');
+			}
+			@font-face {
+				font-family: lemon;
+				src: url('AaMissLemon-2.ttf');
+			}
+			#body{
+				background: url('background.gif') no-repeat;
+				background-size: 100% 100%;	
+				width: 100%;
+				height: 100%;
+			}
+			#word{
+				color: #cf2207;
+				font-size: 60px;
+				text-align: center;
+				padding-top:15px;
+				font-family: lemon;
+			}
+			input{
+				position: absolute;
+				height: 50px;
+				width: 200px;
+				background-color:rgba(255,255,255,0.5);
+				outline:none;
+				border-radius: 5px;
+				font-size: 30px;
+				font-family: yuanqi;
+			}
+			#like{
+				top: 323px;
+				left:250px;
+			}
+			#not{
+				top: 323px;
+				right:250px;
+			}
+			#click{
+				text-align: center;
+				color: #fdfdfd;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="body">
+			<div id="word">喜欢我刘c吗？</div>
+			<br>
+			<br>
+			<h1 id="click">点击以开始</h1>
+		</div>
+		<input type="button" value="喜欢" id="like"/>
+		<input type="button" value="不喜欢" id="not" />
+		<script>
+			var click = document.getElementById('click');
+			var n = document.getElementById('not');
+			var l = document.getElementById('like');
+			var begin = new Audio("begin.mp3");
+			var not = new Audio("NotLike.mp3");
+			var like = new Audio("Like.mp3");
+			var likeClick = new Audio("LikeClick.mp3");
+			var title = document.getElementById('click');
+			click.onclick = function(){
+				begin.play();
+				click.style.display = 'none';
+				n.onmouseover = function(){
+				//n.style.display = 'none';
+				var top = Math.random()*500+100+'px';
+				var right = Math.random()*500+100+'px';
+				n.style.top = top;
+				n.style.right = right;
+				not.play();
+			}
+			l.onmouseover = function(){
+				n.style.top = "323px";
+				n.style.right = "250px";
+				like.play();
+			}
+			n.onclick = function(){
+				var top = Math.random()*500+100+'px';
+				var right = Math.random()*100+700+'px';
+				n.style.top = top;
+				n.style.right = right;
+			}
+			l.onclick = function(){
+				likeClick.play();
+				alert('我也喜欢你呢，啾咪');
+				
+			}
+		}
+			console.log('NineQueen出品，必属精品');
+			console.log("DoYouLoveMe_视障版本");
+			console.log('NineQueen致力于社会平等，此次版本更新加入"旁白"功能，旨在使网页更智能，获得更好的互动体验');
+		</script>
+	</body>
+</html>
