@@ -11,12 +11,8 @@
 				font-family: yuanqi;
 				src: url('HYHeiLiZhiTiJ.ttf');
 			}
-			@font-face {
-				font-family: lemon;
-				src: url('AaMissLemon-2.ttf');
-			}
 			#body{
-				background: url('background.gif') no-repeat;
+				background: url('background.jpg') no-repeat;
 				background-size: 100% 100%;	
 				width: 100%;
 				height: 100%;
@@ -26,7 +22,7 @@
 				font-size: 60px;
 				text-align: center;
 				padding-top:15px;
-				font-family: lemon;
+				font-family: yuanqi;
 			}
 			input{
 				position: absolute;
@@ -37,6 +33,7 @@
 				border-radius: 5px;
 				font-size: 30px;
 				font-family: yuanqi;
+				display: none;
 			}
 			#like{
 				top: 323px;
@@ -49,7 +46,9 @@
 			#click{
 				text-align: center;
 				color: #fdfdfd;
+				font-size: 80px;
 				display: block;
+				font-family: 'yuanqi';
 			}
 		</style>
 	</head>
@@ -58,7 +57,7 @@
 			<div id="word">喜欢我刘c吗？</div>
 			<br>
 			<br>
-			<h1 id="click">点击以开始</h1>
+			<div id="click">点击以开始</div>
 		</div>
 		<input type="button" value="喜欢" id="like"/>
 		<input type="button" value="不喜欢" id="not" />
@@ -74,6 +73,8 @@
 			click.onclick = function(){
 				begin.play();
 				click.style.display = 'none';
+				n.style.display = 'block';
+				l.style.display = 'block';
 				n.onmouseover = function(){
 				//n.style.display = 'none';
 				var top = Math.random()*500+100+'px';
